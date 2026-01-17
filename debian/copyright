@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/YaLTeR/niri
+Upstream-Name: niri
+Upstream-Contact: Ivan Molodetskikh <yalterz@gmail.com>
+
+Files:
+ *
+Copyright:
+ 2023-2026 YaLTeR - Ivan Molodetskikh <yalterz@gmail.com>
+License: GPL-3.0+
+
+Files:
+ debian/*
+Copyright:
+ 2025-2026 Dimitry Ishenko <dimitry.ishenko@gmail.com>
+License: GPL-3.0+

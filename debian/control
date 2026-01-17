@@ -1,0 +1,47 @@
+Source: niri
+Section: x11
+Priority: optional
+Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ cargo,
+ libclang-dev,
+ libdbus-1-dev,
+ libdisplay-info-dev,
+ libegl1-mesa-dev,
+ libgbm-dev,
+ libinput-dev,
+ libpango1.0-dev,
+ libpipewire-0.3-dev,
+ libseat-dev,
+ libsystemd-dev,
+ libudev-dev,
+ libwayland-dev,
+ libxkbcommon-dev,
+ rustfmt,
+Standards-Version: 4.6.2
+Homepage: https://yalter.github.io/niri
+Vcs-Browser: https://github.com/YaLTeR/niri
+Vcs-Git: https://github.com/YaLTeR/niri.git
+
+Package: niri
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: A scrollable-tiling Wayland compositor
+ Windows are arranged in columns on an infinite strip going to the right.
+ Opening a new window never causes existing windows to resize.
+ .
+ Every monitor has its own separate window strip. Windows can never "overflow"
+ onto an adjacent monitor.
+ .
+ Workspaces are dynamic and arranged vertically. Every monitor has an
+ independent set of workspaces, and there's always one empty workspace present
+ all the way down.
+ .
+ The workspace arrangement is preserved across disconnecting and connecting
+ monitors where it makes sense. When a monitor disconnects, its workspaces will
+ move to another monitor, but upon reconnection they will move back to the
+ original monitor.
