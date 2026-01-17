@@ -1,5 +1,6 @@
-niri (25.11-1) UNRELEASED; urgency=medium
+niri (25.11-1) unstable; urgency=medium
 
-  * Initial release.
+  * Add Debian packaging
+  * New upstream version 25.11
 
- -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 19 Dec 2025 17:39:43 -0500
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 17 Jan 2026 14:01:20 -0500
