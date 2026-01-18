@@ -1,3 +1,9 @@
+niri (25.11-2) unstable; urgency=medium
+
+  * d/control: some vendor packages need rust 1.77.2
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 17 Jan 2026 20:45:36 -0500
+
 niri (25.11-1) unstable; urgency=medium
 
   * Add Debian packaging
