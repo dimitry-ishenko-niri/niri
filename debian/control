@@ -31,6 +31,11 @@ Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+Recommends:
+ gnome-keyring,
+ xdg-desktop-portal-gnome,
+ xdg-desktop-portal-gtk,
+ xwayland-satellite,
 Description: A scrollable-tiling Wayland compositor
  Windows are arranged in columns on an infinite strip going to the right.
  Opening a new window never causes existing windows to resize.
