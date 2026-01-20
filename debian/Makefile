@@ -17,6 +17,7 @@ install:
 	install -D resources/niri-session         $(DESTDIR)$(BINDIR)/niri-session
 
 	install -D resources/niri.service         $(DESTDIR)$(LIBDIR)/systemd/user/niri.service
+	sed -ri "s|ExecStart=/usr/bin|ExecStart=$(BINDIR)|" $(DESTDIR)$(LIBDIR)/systemd/user/niri.service
 	install -D resources/niri-shutdown.target $(DESTDIR)$(LIBDIR)/systemd/user/niri-shutdown.target
 
 	install -D resources/niri.desktop         $(DESTDIR)$(DATADIR)/wayland-sessions/niri.desktop
