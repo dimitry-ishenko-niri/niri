@@ -1,3 +1,12 @@
+niri (25.11-5) unstable; urgency=medium
+
+  * d/control: recommend quickshell
+  * d/rules: set version
+  * d/control: depend on libwayland-server0
+  * d/control: suggest packages used out-of-the-box
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Wed, 21 Jan 2026 18:37:55 -0500
+
 niri (25.11-4) unstable; urgency=medium
 
   * d/rules: fix build with versioned rust
