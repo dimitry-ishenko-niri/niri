@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
+
 export DH_VERBOSE = 1
+export CARGO := $(shell command -v cargo || command -v cargo-1.78 || echo cargo)
 
 %:
 	dh $@
