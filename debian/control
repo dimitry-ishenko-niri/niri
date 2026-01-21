@@ -31,6 +31,7 @@ Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+ libwayland-server0,
 Recommends:
  gnome-keyring,
  xdg-desktop-portal-gnome,
