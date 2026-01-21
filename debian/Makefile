@@ -1,7 +1,5 @@
 # Makefile
 
-CARGO ?= cargo
-
 PREFIX  ?= /usr/local
 DESTDIR ?=
 
@@ -12,7 +10,7 @@ DATADIR = $(PREFIX)/share
 all: build
 
 build:
-	$(CARGO) build --offline --release --features default
+	cargo build --offline --release --features default
 
 install:
 	install -D target/release/niri            $(DESTDIR)$(BINDIR)/niri
@@ -36,6 +34,6 @@ install:
 	target/release/niri completions zsh  >$(DESTDIR)$(DATADIR)/zsh/site-functions/_niri
 
 clean:
-	$(CARGO) clean
+	cargo clean
 
 .PHONY: all build install clean
