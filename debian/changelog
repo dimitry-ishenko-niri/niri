@@ -1,3 +1,13 @@
+niri (25.11-3) unstable; urgency=medium
+
+  * debian: support versioned cargo
+  * Makefile: allow cargo override
+  * Makefile: correct path
+  * d/control: recommend several packages
+  * d/control: fix deps
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 20 Jan 2026 19:49:04 -0500
+
 niri (25.11-2) unstable; urgency=medium
 
   * d/control: some vendor packages need rust 1.77.2
