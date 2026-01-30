@@ -40,9 +40,13 @@ Recommends:
  xwayland-satellite,
 Suggests:
  alacritty,
+ brightness-udev
+ brightnessctl,
  fuzzel,
  mako-notifier,
+ playerctl,
  waybar,
+ wireplumber,
 Description: A scrollable-tiling Wayland compositor
  Windows are arranged in columns on an infinite strip going to the right.
  Opening a new window never causes existing windows to resize.
