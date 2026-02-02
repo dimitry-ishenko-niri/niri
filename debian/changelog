@@ -1,3 +1,9 @@
+niri (25.11-6) unstable; urgency=medium
+
+  * d/control: suggest more packages
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 02 Feb 2026 16:12:43 -0500
+
 niri (25.11-5) unstable; urgency=medium
 
   * d/control: recommend quickshell
