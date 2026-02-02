@@ -1,3 +1,9 @@
+niri (25.11-7) unstable; urgency=medium
+
+  * d/control: fix typo
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 02 Feb 2026 18:36:18 -0500
+
 niri (25.11-6) unstable; urgency=medium
 
   * d/control: suggest more packages
