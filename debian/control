@@ -40,7 +40,7 @@ Recommends:
  xwayland-satellite,
 Suggests:
  alacritty,
- brightness-udev
+ brightness-udev,
  brightnessctl,
  fuzzel,
  mako-notifier,
