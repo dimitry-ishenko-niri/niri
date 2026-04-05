@@ -34,7 +34,6 @@ Depends:
  libwayland-server0,
 Recommends:
  gnome-keyring,
- quickshell,
  xdg-desktop-portal-gnome,
  xdg-desktop-portal-gtk,
  xwayland-satellite,
