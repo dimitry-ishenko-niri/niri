@@ -5,7 +5,7 @@ Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
 Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
- cargo:native (>= 1.80.1) | cargo-1.80:native,
+ cargo:native (>= 1.85) | cargo-1.85:native,
  libclang-dev,
  libdbus-1-dev,
  libdisplay-info-dev,
@@ -19,8 +19,8 @@ Build-Depends:
  libudev-dev,
  libwayland-dev,
  libxkbcommon-dev,
- rustc:native (>= 1.80.1) | rustc-1.80:native,
- rustfmt:native (>= 1.80.1) | rustfmt-1.80:native,
+ rustc:native (>= 1.85) | rustc-1.85:native,
+ rustfmt:native (>= 1.85) | rustfmt-1.85:native,
 Standards-Version: 4.6.2
 Homepage: https://yalter.github.io/niri
 Vcs-Browser: https://github.com/YaLTeR/niri
