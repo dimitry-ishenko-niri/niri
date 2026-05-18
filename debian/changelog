@@ -1,3 +1,10 @@
+niri (26.04-4) unstable; urgency=medium
+
+  * Add debian-release workflow
+  * d/rules: fix rust version
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 18 May 2026 18:33:37 -0400
+
 niri (26.04-3) unstable; urgency=medium
 
   * d/control: fix minimum rust version
