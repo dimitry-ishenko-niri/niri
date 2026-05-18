@@ -1,1 +1,2 @@
 extend-diff-ignore = "^docs/wiki/img/"
+extend-diff-ignore = "^.github/workflows/debian-release.yaml$"
