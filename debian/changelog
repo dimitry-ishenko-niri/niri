@@ -1,3 +1,9 @@
+niri (26.04-2) unstable; urgency=medium
+
+  * cargo-config.toml: fix smithay url
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 17 May 2026 23:02:46 -0400
+
 niri (26.04-1) unstable; urgency=medium
 
   [ Dimitry Ishenko ]
