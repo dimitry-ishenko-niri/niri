@@ -2,7 +2,7 @@
 
 export DH_VERBOSE = 1
 export NIRI_BUILD_VERSION_STRING := $(shell dpkg-parsechangelog --show-field Version)
-RUST_VER = 1.80
+RUST_VER = 1.85
 
 %:
 	dh $@
