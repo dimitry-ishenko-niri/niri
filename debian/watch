@@ -1,0 +1,14 @@
+# Usage: uscan --force-download --no-symlink
+
+Version: 5
+
+Template: GitHub
+Owner: niri-wm
+Project: niri
+Filename-Mangle: s%.*/v?(\d[^/]*)$%niri_$1.orig.tar.gz%
+
+Component: vendor
+Source: https://api.github.com/repos/niri-wm/niri/releases
+Searchmode: plain
+Matching-Pattern: [^"]+/@PACKAGE@-@ANY_VERSION@-vendored-dependencies@ARCHIVE_EXT@
+Filename-Mangle: s%.*/niri-(.*)-vendored-dependencies\.tar\.xz$%niri_$1.orig-vendor.tar.xz%
