@@ -22,9 +22,9 @@ Build-Depends:
  rustc:native (>= 1.85) | rustc-1.85:native,
  rustfmt:native (>= 1.85) | rustfmt-1.85:native,
 Standards-Version: 4.6.2
-Homepage: https://yalter.github.io/niri
-Vcs-Browser: https://github.com/YaLTeR/niri
-Vcs-Git: https://github.com/YaLTeR/niri.git
+Homepage: https://niri-wm.github.io/niri
+Vcs-Browser: https://github.com/niri-wm/niri
+Vcs-Git: https://github.com/niri-wm/niri.git
 
 Package: niri
 Architecture: any
