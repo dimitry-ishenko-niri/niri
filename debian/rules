@@ -4,23 +4,63 @@ export DH_VERBOSE = 1
 export NIRI_BUILD_VERSION_STRING := $(shell dpkg-parsechangelog --show-field Version)
 RUST_VER = 1.85
 
+export CARGO := $(shell command -v cargo-$(RUST_VER) 2>/dev/null || command -v cargo)
+export RUSTC := $(shell command -v rustc-$(RUST_VER) 2>/dev/null || command -v rustc)
+
+define CARGO_CONFIG
+[profile.release]
+debug = true
+strip = false
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source."https://github.com/Smithay/smithay.git?rev=ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef"]
+git = "https://github.com/Smithay/smithay.git"
+rev = "ff5fa7df392cecfba049ffed55cdaa4e98a8e7ef"
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "$(CURDIR)/vendor"
+endef
+export CARGO_CONFIG
+
+DESTDIR = $(CURDIR)/debian/niri
+BINDIR  = /usr/bin
+LIBDIR  = /usr/lib
+DATADIR = /usr/share
+
 %:
 	dh $@
 
 override_dh_auto_configure:
-	mkdir -p .bin .cargo
-	cp debian/cargo-config.toml .cargo/config.toml
-	cp debian/Makefile .
-	ln -sf $$(command -v   cargo-$(RUST_VER)) .bin/cargo
-	ln -sf $$(command -v   rustc-$(RUST_VER)) .bin/rustc
-	ln -sf $$(command -v rustfmt-$(RUST_VER)) .bin/rustfmt
+	mkdir -p .cargo
+	echo "$$CARGO_CONFIG" > .cargo/config.toml
+	dh_auto_configure
 
 override_dh_auto_build:
-	PATH=$$PATH:$(CURDIR)/.bin dh_auto_build
+	$(CARGO) build --frozen --release --features default
 
 override_dh_auto_install:
-	dh_auto_install -- PREFIX=/usr
+	install -D target/release/niri            $(DESTDIR)$(BINDIR)/niri
+	install -D resources/niri-session         $(DESTDIR)$(BINDIR)/niri-session
+
+	install -D resources/niri.service         $(DESTDIR)$(LIBDIR)/systemd/user/niri.service
+	install -D resources/niri-shutdown.target $(DESTDIR)$(LIBDIR)/systemd/user/niri-shutdown.target
+
+	install -D resources/niri.desktop         $(DESTDIR)$(DATADIR)/wayland-sessions/niri.desktop
+	install -D resources/niri-portals.conf    $(DESTDIR)$(DATADIR)/xdg-desktop-portal/niri-portals.conf
+	install -D resources/default-config.kdl   $(DESTDIR)$(DATADIR)/doc/niri/default-config.kdl
+
+	install -d $(DESTDIR)$(DATADIR)/bash-completion/completions/
+	target/release/niri completions bash >$(DESTDIR)$(DATADIR)/bash-completion/completions/niri
+
+	install -d $(DESTDIR)$(DATADIR)/fish/vendor_completions.d/
+	target/release/niri completions fish >$(DESTDIR)$(DATADIR)/fish/vendor_completions.d/niri.fish
+
+	install -d $(DESTDIR)$(DATADIR)/zsh/site-functions/
+	target/release/niri completions zsh  >$(DESTDIR)$(DATADIR)/zsh/site-functions/_niri
 
 override_dh_clean:
+	rm -rf .cargo/
 	dh_clean --exclude=vendor
-	rm -rf .bin .cargo
