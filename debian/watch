@@ -1,7 +1,6 @@
-# Usage: uscan --force-download --no-symlink
-
 Version: 5
 
+# Usage: uscan --download-current-version --no-symlink
 Template: GitHub
 Owner: niri-wm
 Project: niri
