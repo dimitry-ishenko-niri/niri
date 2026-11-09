@@ -1,3 +1,12 @@
+niri (26.04-5) unstable; urgency=medium
+
+  * d/copyright: update links
+  * d/control: update links
+  * d/rules: simplify
+  * Add d/watch
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 08 Nov 2026 20:33:56 -0500
+
 niri (26.04-4) unstable; urgency=medium
 
   * Add debian-release workflow
